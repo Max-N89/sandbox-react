@@ -1,0 +1,36 @@
+{
+  "name": "sandbox-react",
+  "description": "A sandbox for implementing examples and exercises from tutorials and guides for React and related libraries.",
+  "private": true,
+  "scripts": {
+    "dev": "webpack serve --open --config dev.webpack.config.babel.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Max-N89/sandbox-react.git"
+  },
+  "author": "Maksym Nikishyn <4work.maxn@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Max-N89/sandbox-react/issues"
+  },
+  "homepage": "https://github.com/Max-N89/sandbox-react#readme",
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/register": "^7.15.3",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.2.6",
+    "html-webpack-plugin": "^5.3.1",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
