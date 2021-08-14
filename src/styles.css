@@ -1,0 +1,19 @@
+body {
+    max-width: 90%;
+    min-width: 1200px;
+    margin: 0 auto;
+}
+
+main {
+    padding-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+main > * {
+    margin: 0;
+    padding: 40px;
+    border: 2px solid black;
+    border-radius: 20px;
+}
