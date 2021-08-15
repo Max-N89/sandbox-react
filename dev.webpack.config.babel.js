@@ -1,7 +1,7 @@
 const path = require("path");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 
-module.exports = {
+const config = {
     target: "web",
     mode: "development",
     devtool: "eval-source-map",
@@ -55,4 +55,13 @@ module.exports = {
             favicon: "./src/assets/sandbox-icon-16.png"
         })
     ]
+}
+
+module.exports = (env, argv) => {
+    if (env.prod) {
+        config.mode = "production";
+        config.devtool = false;
+        config.output.publicPath = "";
+    }
+    return config;
 }

@@ -3,7 +3,8 @@
   "description": "A sandbox for implementing examples and exercises from tutorials and guides for React and related libraries.",
   "private": true,
   "scripts": {
-    "dev": "webpack serve --open --config dev.webpack.config.babel.js"
+    "dev": "webpack serve --open --config dev.webpack.config.babel.js",
+    "prod": "webpack --env prod --config dev.webpack.config.babel.js"
   },
   "repository": {
     "type": "git",
