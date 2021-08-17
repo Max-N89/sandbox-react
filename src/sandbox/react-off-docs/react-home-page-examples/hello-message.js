@@ -4,7 +4,7 @@ class HelloMessage extends Component {
     render() {
         return (
             <h2>
-                Hello {this.props.name}
+                Hello {this.props.to}
             </h2>
         );
     }

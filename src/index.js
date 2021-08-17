@@ -8,14 +8,14 @@ const sandboxContainer = document.createElement("main");
 sandboxContainer.id = "sandbox_container";
 document.body.append(sandboxContainer);
 
-import HelloMessage from "./sandbox/react-home-page-examples/HelloMessage";
-import Timer from "./sandbox/react-home-page-examples/Timer";
-import TodoApp from "./sandbox/react-home-page-examples/TodoApp";
-import MarkdownEditor from "./sandbox/react-home-page-examples/MarkdownEditor";
+import HelloMessage from "./sandbox/react-off-docs/react-home-page-examples/hello-message";
+import Timer from "./sandbox/react-off-docs/react-home-page-examples/timer";
+import TodoApp from "./sandbox/react-off-docs/react-home-page-examples/todo-app";
+import MarkdownEditor from "./sandbox/react-off-docs/react-home-page-examples/markdown-editor";
 
 ReactDOM.render(
     <Fragment>
-        <HelloMessage name="Max"/>
+        <HelloMessage to="Max"/>
         <Timer/>
         <TodoApp/>
         <MarkdownEditor/>
