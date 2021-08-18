@@ -22,3 +22,12 @@ ReactDOM.render(
     </Fragment>,
     sandboxContainer
 );
+
+
+/* ticking clock example
+
+import tick from "./sandbox/react-off-docs/rendering-elements/ticking-clock";
+
+setInterval(() => tick(sandboxContainer.id), 1e3);
+
+*/
