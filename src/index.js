@@ -13,21 +13,19 @@ import Timer from "./sandbox/react-off-docs/react-home-page-examples/timer";
 import TodoApp from "./sandbox/react-off-docs/react-home-page-examples/todo-app";
 import MarkdownEditor from "./sandbox/react-off-docs/react-home-page-examples/markdown-editor";
 
+import Clock from "./sandbox/react-off-docs/rendering-elements/clock";
+
 ReactDOM.render(
     <Fragment>
         <HelloMessage to="Max"/>
         <Timer/>
         <TodoApp/>
         <MarkdownEditor/>
+        <section>
+                <Clock/>
+                <Clock/>
+                <Clock/>
+        </section>
     </Fragment>,
     sandboxContainer
 );
-
-
-/* ticking clock example
-
-import tick from "./sandbox/react-off-docs/rendering-elements/ticking-clock";
-
-setInterval(() => tick(sandboxContainer.id), 1e3);
-
-*/
