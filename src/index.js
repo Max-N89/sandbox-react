@@ -16,21 +16,27 @@ import TodoApp from "./sandbox/react-off-docs/react-home-page-examples/todo-app"
 import MarkdownEditor from "./sandbox/react-off-docs/react-home-page-examples/markdown-editor";
 import Clock from "./sandbox/react-off-docs/rendering-elements/clock";
 import ToggleButton from "./sandbox/react-off-docs/handling-events/toggle-button";
+import LoginControl from "./sandbox/react-off-docs/conditional-rendering/login-control/login-control";
+import {Mailbox, messages as mailboxMessages} from "./sandbox/react-off-docs/conditional-rendering/mailbox/mailbox";
+import Page from "./sandbox/react-off-docs/conditional-rendering/page/page";
 
 ReactDOM.render(
     <Fragment>
-            <HelloMessage to="Max"/>
-            <Timer/>
-            <TodoApp/>
-            <MarkdownEditor/>
-            <section>
-                    <Clock/>
-                    <Clock/>
-                    <Clock/>
-            </section>
-            <section>
-                <ToggleButton/>
-            </section>
+        <HelloMessage to="Max"/>
+        <Timer/>
+        <TodoApp/>
+        <MarkdownEditor/>
+        <section>
+            <Clock/>
+            <Clock/>
+            <Clock/>
+        </section>
+        <section>
+            <ToggleButton/>
+        </section>
+        <LoginControl/>
+        <Mailbox inboxMessages={mailboxMessages}/>
+        <Page/>
     </Fragment>,
     sandboxContainer
 );
