@@ -19,6 +19,7 @@ import ToggleButton from "./sandbox/react-off-docs/handling-events/toggle-button
 import LoginControl from "./sandbox/react-off-docs/conditional-rendering/login-control/login-control";
 import {Mailbox, messages as mailboxMessages} from "./sandbox/react-off-docs/conditional-rendering/mailbox/mailbox";
 import Page from "./sandbox/react-off-docs/conditional-rendering/page/page";
+import {Blog, posts as blogPosts} from "./sandbox/react-off-docs/lists-and-keys/blog";
 
 ReactDOM.render(
     <Fragment>
@@ -37,6 +38,7 @@ ReactDOM.render(
         <LoginControl/>
         <Mailbox inboxMessages={mailboxMessages}/>
         <Page/>
+        <Blog posts={blogPosts}/>
     </Fragment>,
     sandboxContainer
 );
