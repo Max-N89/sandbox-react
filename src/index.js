@@ -17,7 +17,7 @@ import MarkdownEditor from "./sandbox/react-off-docs/react-home-page-examples/ma
 import Clock from "./sandbox/react-off-docs/rendering-elements/clock";
 import ToggleButton from "./sandbox/react-off-docs/handling-events/toggle-button";
 import LoginControl from "./sandbox/react-off-docs/conditional-rendering/login-control/login-control";
-import {Mailbox, messages as mailboxMessages} from "./sandbox/react-off-docs/conditional-rendering/mailbox/mailbox";
+import {Mailbox, messages as mailboxMessages} from "./sandbox/react-off-docs/conditional-rendering/mailbox";
 import Page from "./sandbox/react-off-docs/conditional-rendering/page/page";
 import {Blog, posts as blogPosts} from "./sandbox/react-off-docs/lists-and-keys/blog";
 import NameForm from "./sandbox/react-off-docs/forms/name-form";
