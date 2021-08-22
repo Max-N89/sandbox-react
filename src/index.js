@@ -20,6 +20,10 @@ import LoginControl from "./sandbox/react-off-docs/conditional-rendering/login-c
 import {Mailbox, messages as mailboxMessages} from "./sandbox/react-off-docs/conditional-rendering/mailbox/mailbox";
 import Page from "./sandbox/react-off-docs/conditional-rendering/page/page";
 import {Blog, posts as blogPosts} from "./sandbox/react-off-docs/lists-and-keys/blog";
+import NameForm from "./sandbox/react-off-docs/forms/name-form";
+import EssayForm from "./sandbox/react-off-docs/forms/essay-form";
+import FlavorForm from "./sandbox/react-off-docs/forms/flavor-form";
+import ReservationForm from "./sandbox/react-off-docs/forms/resevation-form";
 
 ReactDOM.render(
     <Fragment>
@@ -39,6 +43,10 @@ ReactDOM.render(
         <Mailbox inboxMessages={mailboxMessages}/>
         <Page/>
         <Blog posts={blogPosts}/>
+        <NameForm/>
+        <EssayForm/>
+        <FlavorForm/>
+        <ReservationForm/>
     </Fragment>,
     sandboxContainer
 );
