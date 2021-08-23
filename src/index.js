@@ -24,6 +24,7 @@ import NameForm from "./sandbox/react-off-docs/forms/name-form";
 import EssayForm from "./sandbox/react-off-docs/forms/essay-form";
 import FlavorForm from "./sandbox/react-off-docs/forms/flavor-form";
 import ReservationForm from "./sandbox/react-off-docs/forms/resevation-form";
+import Calculator from "./sandbox/react-off-docs/lifting-state-up/calculator";
 
 ReactDOM.render(
     <Fragment>
@@ -47,6 +48,7 @@ ReactDOM.render(
         <EssayForm/>
         <FlavorForm/>
         <ReservationForm/>
+        <Calculator/>
     </Fragment>,
     sandboxContainer
 );
