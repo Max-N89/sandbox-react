@@ -1,0 +1,11 @@
+.fancy-border {
+    margin: 30px;
+    padding: 30px;
+    border-radius: 60px;
+    border-style: dashed;
+    border-width: 5px;
+}
+
+.fancy-border.fancy-border-blue {
+    border-color: dodgerblue;
+}
