@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 
-import Dialog from "./dialog";
+import {Dialog} from "./dialog";
 
-export default class extends Component {
+class SignUpDialog extends Component {
     constructor(props) {
         super(props);
 
@@ -47,4 +47,6 @@ export default class extends Component {
             </Dialog>
         );
     }
-};
+}
+
+export {SignUpDialog};

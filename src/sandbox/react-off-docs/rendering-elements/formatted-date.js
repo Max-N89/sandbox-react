@@ -1,7 +1,9 @@
 import React from "react";
 
-export default function (props) {
+function FormattedDate(props) {
     return (
         <p>It is {props.date.toLocaleTimeString()}.</p>
     );
 }
+
+export {FormattedDate};

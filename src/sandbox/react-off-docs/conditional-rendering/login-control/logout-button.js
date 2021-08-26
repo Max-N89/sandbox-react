@@ -1,9 +1,11 @@
 import React from "react";
 
-export default function (props) {
+function LogoutButton(props) {
     return (
         <button onClick={props.onClick}>
             Logout
         </button>
     );
-};
+}
+
+export {LogoutButton};

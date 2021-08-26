@@ -1,9 +1,11 @@
 import React from "react";
 
-export default function () {
+function GuestGreeting() {
     return (
         <p>
             Please, sign up.
         </p>
     );
-};
+}
+
+export {GuestGreeting};

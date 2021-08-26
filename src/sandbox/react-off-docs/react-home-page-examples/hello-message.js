@@ -10,4 +10,4 @@ class HelloMessage extends Component {
     }
 }
 
-export default HelloMessage;
+export {HelloMessage};

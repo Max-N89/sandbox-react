@@ -4,59 +4,40 @@ import ReactDOM from "react-dom";
 import "normalize.css";
 import "./styles.css";
 
+import {SandboxSampleContainer} from "./components/sandbox-sample-container";
+import {SandboxSection} from "./components/sandbox-section";
+
+import {sectionDescription as reactOffDocsSectionDescription} from "./sandbox/react-off-docs/section-description";
+
+const sandboxHeader = document.createElement("header");
 const sandboxContainer = document.createElement("main");
+
+sandboxHeader.id = "sandbox_header";
 sandboxContainer.id = "sandbox_container";
-document.body.append(sandboxContainer);
 
+document.body.prepend(sandboxHeader,  sandboxContainer);
 
-// React official documentation
-import HelloMessage from "./sandbox/react-off-docs/react-home-page-examples/hello-message";
-import Timer from "./sandbox/react-off-docs/react-home-page-examples/timer";
-import TodoApp from "./sandbox/react-off-docs/react-home-page-examples/todo-app";
-import MarkdownEditor from "./sandbox/react-off-docs/react-home-page-examples/markdown-editor";
-import Clock from "./sandbox/react-off-docs/rendering-elements/clock";
-import ToggleButton from "./sandbox/react-off-docs/handling-events/toggle-button";
-import LoginControl from "./sandbox/react-off-docs/conditional-rendering/login-control/login-control";
-import {Mailbox, messages as mailboxMessages} from "./sandbox/react-off-docs/conditional-rendering/mailbox";
-import Page from "./sandbox/react-off-docs/conditional-rendering/page/page";
-import {Blog, posts as blogPosts} from "./sandbox/react-off-docs/lists-and-keys/blog";
-import NameForm from "./sandbox/react-off-docs/forms/name-form";
-import EssayForm from "./sandbox/react-off-docs/forms/essay-form";
-import FlavorForm from "./sandbox/react-off-docs/forms/flavor-form";
-import ReservationForm from "./sandbox/react-off-docs/forms/resevation-form";
-import Calculator from "./sandbox/react-off-docs/lifting-state-up/calculator";
-import WelcomeDialog from "./sandbox/react-off-docs/composition/welcome-dialog"
-import SignUpDialog from "./sandbox/react-off-docs/composition/sign-up-dialog";
-
+ReactDOM.render(<h1>React Sandbox</h1>, sandboxHeader);
 ReactDOM.render(
     <Fragment>
-        <HelloMessage to="Max"/>
-        <Timer/>
-        <TodoApp/>
-        <MarkdownEditor/>
-        <section>
-            <Clock/>
-            <Clock/>
-            <Clock/>
-        </section>
-        <section>
-            <ToggleButton/>
-        </section>
-        <LoginControl/>
-        <Mailbox inboxMessages={mailboxMessages}/>
-        <Page/>
-        <Blog posts={blogPosts}/>
-        <NameForm/>
-        <EssayForm/>
-        <FlavorForm/>
-        <ReservationForm/>
-        <Calculator/>
-        <section>
-            <WelcomeDialog/>
-        </section>
-        <section>
-            <SignUpDialog/>
-        </section>
+        {
+            [
+                reactOffDocsSectionDescription,
+
+            ].map(({title, samplesList}) => (
+                // TODO: fix sections titles usage as a key property
+                <SandboxSection key={title} title={title}>
+                    {
+                        // TODO: fix samples titles usage as a key property
+                        samplesList.map(({title, instance}) => (
+                            <SandboxSampleContainer key={title} title={title}>
+                                {instance}
+                            </SandboxSampleContainer>
+                        ))
+                    }
+                </SandboxSection>
+            ))
+        }
     </Fragment>,
     sandboxContainer
 );

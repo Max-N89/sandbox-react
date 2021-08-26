@@ -1,10 +1,10 @@
 import React, {Component} from "react";
 
-import LoginButton from "./login-button";
-import LogoutButton from "./logout-button";
-import Greeting from "./greeting";
+import {LoginButton} from "./login-button";
+import {LogoutButton} from "./logout-button";
+import {Greeting} from "./greeting";
 
-export default class extends Component{
+class LoginControl extends Component{
     constructor(props) {
         super(props);
         this.state = {
@@ -40,3 +40,5 @@ export default class extends Component{
         );
     }
 }
+
+export {LoginControl};

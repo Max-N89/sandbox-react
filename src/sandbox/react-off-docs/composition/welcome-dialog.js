@@ -1,9 +1,8 @@
 import React from "react";
 
-import FancyBorder from "./fancy-border";
-import Dialog from "./dialog";
+import {Dialog} from "./dialog";
 
-export default function () {
+function WelcomeDialog () {
     return (
         <Dialog
             title="Welcome"
@@ -11,4 +10,6 @@ export default function () {
             borderColor="blue"
         />
     );
-};
+}
+
+export {WelcomeDialog};

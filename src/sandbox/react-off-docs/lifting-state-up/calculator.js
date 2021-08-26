@@ -3,10 +3,10 @@ import React, {Component} from "react";
 import {tryToConvert} from "./supplements/try-to-convert";
 import {toCelsius, toFahrenheit} from "./supplements/temperature-converters";
 
-import BoilingVerdict from "./boiling-verdict";
-import TemperatureInput from "./temperature-input";
+import {BoilingVerdict} from "./boiling-verdict";
+import {TemperatureInput} from "./temperature-input";
 
-export default class extends Component {
+class Calculator extends Component {
     constructor(props) {
         super(props);
 
@@ -62,4 +62,6 @@ export default class extends Component {
             </div>
         );
     }
-};
+}
+
+export {Calculator};

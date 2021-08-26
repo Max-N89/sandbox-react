@@ -5,7 +5,7 @@ const scaleNames = {
     f: 'Fahrenheit'
 };
 
-export default function (props) {
+function TemperatureInput(props) {
     const {
         scale,
         temperatureStr,
@@ -21,7 +21,7 @@ export default function (props) {
                    onChange={onTemperatureChange} />
         </fieldset>
     );
-};
+}
 
 // class TemperatureInput extends React.Component {
 //     constructor(props) {
@@ -45,3 +45,5 @@ export default function (props) {
 //         );
 //     }
 // }
+
+export {TemperatureInput};

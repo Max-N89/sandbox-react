@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 
-import FormattedDate from "./formatted-date";
+import {FormattedDate} from "./formatted-date";
 
-export default class extends Component {
+class Clock extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -33,4 +33,6 @@ export default class extends Component {
             </div>
         );
     }
-};
+}
+
+export {Clock};

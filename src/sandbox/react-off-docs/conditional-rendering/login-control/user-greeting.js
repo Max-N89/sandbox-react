@@ -1,9 +1,11 @@
 import React from "react";
 
-export default function () {
+function UserGreeting() {
     return (
         <p>
             Welcome back!
         </p>
     );
-};
+}
+
+export {UserGreeting};

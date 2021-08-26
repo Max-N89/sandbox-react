@@ -2,7 +2,7 @@ import React from "react";
 
 import "./fancy-border.css";
 
-export default function (props) {
+function FancyBorder(props) {
     return (
         <div
             className={`fancy-border fancy-border-${props.color}`}
@@ -10,4 +10,6 @@ export default function (props) {
             {props.children}
         </div>
     );
-};
+}
+
+export {FancyBorder};

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function (props) {
+function WarningBanner(props) {
     if (!props.warn) {
         return null;
     }
@@ -10,4 +10,6 @@ export default function (props) {
             Warning!
         </p>
     );
-};
+}
+
+export {WarningBanner};

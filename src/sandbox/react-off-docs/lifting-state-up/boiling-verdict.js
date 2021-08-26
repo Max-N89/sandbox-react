@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function (props) {
+function BoilingVerdict(props) {
     const {celsius} = props;
 
     if (celsius >= 100) {
@@ -16,4 +16,6 @@ export default function (props) {
             The water would NOT boil.
         </p>
     );
-};
+}
+
+export {BoilingVerdict};

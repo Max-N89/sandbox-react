@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {Remarkable} from "remarkable";
 
-class MarkdownEditor extends Component{
+class MarkdownEditor extends Component {
     constructor(props) {
         super(props);
         this.state = { value: 'Hello, **world**!' };
@@ -43,4 +43,4 @@ class MarkdownEditor extends Component{
     }
 }
 
-export default MarkdownEditor
+export {MarkdownEditor};
