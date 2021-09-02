@@ -1,0 +1,76 @@
+/* || contracted lens */
+
+.lens.contracted {
+    position: relative;
+    z-index: 10;
+    margin: 2rem;
+    padding: 2rem;
+    height: 8rem;
+    overflow: hidden;
+    border: 1px solid black;
+    border-radius: 4rem 0 4rem 4rem;
+}
+
+.lens.contracted .lens-plug {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(80, 200, 230, .3);
+}
+
+.lens.contracted img.contract-expand {
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    z-index: 30;
+    width: 2rem;
+    cursor: pointer;
+}
+
+/* || expanded lens */
+
+.lens.expanded {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.lens.expanded .lens-plug {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(80, 200, 230, .6);
+}
+
+.lens.expanded img.contract-expand {
+    position: fixed;
+    top: 4vh;
+    right: 4vh;
+    z-index: 400;
+    width: 16vh;
+    border-radius: 28%;
+    cursor: pointer;
+}
+
+.lens.expanded .lens-focus {
+    position: relative;
+    z-index: 300;
+    margin: 20vh 20vw;;
+    padding: 2rem;
+    width: 60vw;
+    height: 60vh;
+    border: 1px solid black;
+    border-radius: 4rem 0 0 4rem;
+    background-color: white;
+    overflow: auto;
+}

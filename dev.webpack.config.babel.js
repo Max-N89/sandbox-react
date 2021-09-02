@@ -45,14 +45,18 @@ const config = {
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
-                type: 'asset/resource',
+                type: "asset/resource",
             },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                type: "asset/resource"
+            }
         ]
     },
     plugins: [
         new HTMLWebpackPlugin({
             title: "React Sandbox",
-            favicon: "./src/assets/sandbox-icon-16.png"
+            favicon: "./src/assets/images/sandbox-icon-16.png"
         })
     ]
 }

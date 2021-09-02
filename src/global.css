@@ -1,0 +1,72 @@
+/* || fonts */
+
+@font-face {
+    font-family: Roboto;
+    src: url("./assets/fonts/roboto-regular.ttf") format("ttf");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url("./assets/fonts/roboto-bold.ttf") format("ttf");
+    font-weight: bold;
+}
+
+/* || box sizing */
+
+html {
+    box-sizing: border-box;
+    font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+
+/* || forms minimal resets */
+
+button,
+input,
+select,
+textarea {
+    padding: 0;
+    margin: 0;
+    font-family : inherit;
+    font-size : 100%;
+}
+
+textarea {
+    overflow: auto;
+}
+
+/* || headers minimal resets */
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+/* || sandbox root elements */
+
+#main_header {
+    padding: 1rem;
+    color: #61dafb;
+    background-color: #20232a;
+}
+
+#main_header h1 {
+    text-align: center;
+}
+
+#main_header h1::before {
+    content: url("./assets/images/react-icon.svg");
+    position: relative;
+    left: -8px;
+    bottom: -2px;
+    display: inline-block;
+    width: 32px;
+}
+
+#main_content {
+    width: 1440px;
+    margin: 0 auto;
+}

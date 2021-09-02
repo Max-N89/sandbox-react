@@ -11,3 +11,7 @@ To start webpack dev server (which also opens the resulting page in a default br
 ```sh
 npm run dev
 ```
+
+## TODO
+
+* Add animations - sample's scroll and contract/expand button
