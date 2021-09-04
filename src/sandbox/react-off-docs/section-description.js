@@ -17,6 +17,8 @@ import {ReservationForm} from "./forms/reservation-form";
 import {Calculator} from "./lifting-state-up/calculator";
 import {WelcomeDialog} from "./composition/welcome-dialog"
 import {SignUpDialog} from "./composition/sign-up-dialog";
+import {FilterableProductTable} from "./thinking-in-react/filterable-product-table";
+import filterableProducts from "./thinking-in-react/products.json";
 
 /*
     BTW: sections (among other sections) and samples (among other samples) titles
@@ -102,6 +104,10 @@ const sectionDescription = {
             title: "Sign Up Dialog",
             instance: <SignUpDialog/>,
         },
+        {
+            title: "Filterable Products Table",
+            instance: <FilterableProductTable products={filterableProducts}/>
+        }
     ]
 };
 
