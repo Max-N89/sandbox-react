@@ -19,6 +19,7 @@ import {WelcomeDialog} from "./composition/welcome-dialog"
 import {SignUpDialog} from "./composition/sign-up-dialog";
 import {FilterableProductTable} from "./thinking-in-react/filterable-product-table";
 import filterableProducts from "./thinking-in-react/products.json";
+import {TicTacToeGame} from "./tic-tac-toe-game/tic-tac-toe-game";
 
 /*
     BTW: sections (among other sections) and samples (among other samples) titles
@@ -107,6 +108,10 @@ const sectionDescription = {
         {
             title: "Filterable Products Table",
             instance: <FilterableProductTable products={filterableProducts}/>
+        },
+        {
+            title: "Tic-Tac-Toe Game",
+            instance: <TicTacToeGame/>
         }
     ]
 };

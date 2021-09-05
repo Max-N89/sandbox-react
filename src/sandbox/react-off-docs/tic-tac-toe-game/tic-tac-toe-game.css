@@ -1,0 +1,49 @@
+.tic-tac-toe-game {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    font: 14px "Century Gothic", Futura, sans-serif;
+}
+
+.tic-tac-toe-game ol,
+.tic-tac-toe-game ul {
+    padding-left: 30px;
+}
+
+.tic-tac-toe-game .status {
+    margin-bottom: 10px;
+}
+
+.tic-tac-toe-game .board-row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.tic-tac-toe-game .square {
+    float: left;
+    margin-right: -1px;
+    margin-top: -1px;
+    border: 1px solid #999;
+    padding: 0;
+    box-sizing: content-box;
+    width: 34px;
+    height: 34px;
+    background: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 34px;
+    text-align: center;
+}
+
+.tic-tac-toe-game .square:focus {
+    outline: none;
+}
+
+.tic-tac-toe-game .kbd-navigation .square:focus {
+    background: #ddd;
+}
+
+.tic-tac-toe-game .game-info {
+    margin-left: 20px;
+}
