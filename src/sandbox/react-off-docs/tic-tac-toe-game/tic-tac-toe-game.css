@@ -1,32 +1,30 @@
+/* || general */
+
 .tic-tac-toe-game {
     display: flex;
-    flex-direction: row;
-    margin: 20px;
+    flex-flow: row wrap;
+    align-items: start;
+    min-width: max-content;
+    max-width: 80%;
     font: 14px "Century Gothic", Futura, sans-serif;
 }
 
 .tic-tac-toe-game ol,
 .tic-tac-toe-game ul {
-    padding-left: 30px;
+    padding-left: 16px;
 }
 
-.tic-tac-toe-game .status {
-    margin-bottom: 10px;
+.tic-tac-toe-game li {
+    margin-top: 4px;
 }
 
-.tic-tac-toe-game .board-row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
+/* || board */
 
 .tic-tac-toe-game .square {
-    float: left;
-    margin-right: -1px;
-    margin-top: -1px;
-    border: 1px solid #999;
-    padding: 0;
+    display: inline-block;
+    vertical-align: top;
     box-sizing: content-box;
+    border: 1px solid lightgrey;
     width: 34px;
     height: 34px;
     background: #fff;
@@ -36,14 +34,38 @@
     text-align: center;
 }
 
-.tic-tac-toe-game .square:focus {
-    outline: none;
-}
-
-.tic-tac-toe-game .kbd-navigation .square:focus {
-    background: #ddd;
-}
+/* game info */
 
 .tic-tac-toe-game .game-info {
-    margin-left: 20px;
+    padding-left: 20px;
+}
+
+.tic-tac-toe-game .game-info > * {
+    margin: 0 0 16px 0;
+}
+
+.tic-tac-toe-game .game-info button {
+    width: 256px;
+}
+
+.tic-tac-toe-game .game-info > button {
+    margin-left: 16px;
+}
+
+.tic-tac-toe-game .game-info > div {
+    margin-left: 16px;
+}
+
+/* highlights */
+
+.tic-tac-toe-game .square.highlighted-green {
+    border: 1px solid green;
+}
+
+.tic-tac-toe-game .square.highlighted-red {
+    background-color: #ef9494;
+}
+
+.tic-tac-toe-game .game-info .highlighted-green {
+    background-color: greenyellow;
 }

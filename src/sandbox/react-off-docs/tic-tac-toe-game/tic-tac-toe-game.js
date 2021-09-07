@@ -2,7 +2,7 @@ import React, {Component} from "react";
 
 import "./tic-tac-toe-game.css";
 
-import {calculateWinner} from "./supplements/calculate-winner";
+import {getWinningSquaresIndexes} from "./supplements/get-winning-squares-indexes";
 
 import {Board} from "./board";
 
@@ -13,78 +13,100 @@ class TicTacToeGame extends Component{
         this.state = {
             history: [{
                 squares: Array(9).fill(null),
+                moveAt: null,
             }],
-            stepNumber: 0,
+            currentStepIndex: 0,
             xIsNext: true,
+            reverseMovesOrder: false,
         };
 
-        this.jumpTo = this.jumpTo.bind(this);
+        this.jumpToStep = this.jumpToStep.bind(this);
         this.handleSquareClick = this.handleSquareClick.bind(this);
+        this.handleReverseMovesOrder = this.handleReverseMovesOrder.bind(this);
     }
 
-    jumpTo(step) {
+    jumpToStep(stepIndex) {
         this.setState({
-            stepNumber: step,
-            xIsNext: (step % 2) === 0,
+            currentStepIndex: stepIndex,
+            xIsNext: (stepIndex % 2) === 0,
         });
     }
 
-    handleSquareClick(i) {
-        const history = this.state.history.slice(0, this.state.stepNumber + 1);
-        const current = history[history.length - 1];
-        const squares = [...current.squares];
+    handleSquareClick(squareIndex) {
+        const remainingHistory = this.state.history.slice(0, this.state.currentStepIndex + 1);
+        const lastStep = remainingHistory[remainingHistory.length - 1];
 
-        if (calculateWinner(squares) || squares[i]) {
+        if (getWinningSquaresIndexes(lastStep.squares) || lastStep.squares[squareIndex]) {
             return;
         }
 
-        squares[i] = this.state.xIsNext ? 'X' : 'O';
+        const nextSquares = [...lastStep.squares];
+
+        nextSquares[squareIndex] = this.state.xIsNext ? 'X' : 'O';
 
         this.setState(prevState => ({
-            history: [...history, {squares}],
-            stepNumber: history.length,
+            history: [...remainingHistory, {squares: nextSquares, moveAt: squareIndex}],
+            currentStepIndex: remainingHistory.length,
             xIsNext: !prevState.xIsNext,
         }));
     }
 
+    handleReverseMovesOrder() {
+        this.setState(prevState => ({
+            reverseMovesOrder: !prevState.reverseMovesOrder
+        }));
+    }
+
     render() {
-        const {history, xIsNext} = this.state;
-        const current = history[this.state.stepNumber];
-        const winner = calculateWinner(current.squares);
-        const moves = history.map((step, move) => {
-            const desc = move ?
-                'Go to move #' + move :
+        const {history, currentStepIndex, xIsNext, reverseMovesOrder} = this.state;
+        const currentStep = history[currentStepIndex];
+        const winningSquaresIndexes = getWinningSquaresIndexes(currentStep.squares);
+        const moves = history.map((step, stepIndex) => {
+            const moveAtRow = Math.floor(step.moveAt / 3) + 1;
+            const moveAtCol = (step.moveAt % 3) + 1;
+
+            const desc = stepIndex ?
+                `Go to move #${stepIndex} (${(stepIndex % 2) === 0 ? "O" : "X"} at row: ${moveAtRow}, col: ${moveAtCol})` :
                 'Go to game start';
 
             return (
-                <li key={move}>
-                    <button onClick={() => this.jumpTo(move)}>{desc}</button>
+                <li key={stepIndex}>
+                    <button
+                        className={currentStepIndex === stepIndex? "highlighted-green" : ""}
+                        onClick={() => this.jumpToStep(stepIndex)}
+                    >
+                        {desc}
+                    </button>
                 </li>
             );
         });
 
+        if (reverseMovesOrder) moves.reverse();
+
         let status;
 
-        if (winner) {
-            status = 'Winner: ' + winner;
+        if (winningSquaresIndexes) {
+            status = "Winner: " + currentStep.squares[winningSquaresIndexes[0]];
+        } else if (currentStepIndex === 9) {
+            status = "Result is draw";
         } else {
-            status = 'Next player: ' + (xIsNext ? 'X' : 'O');
+            status = "Next player: " + (xIsNext ? "X" : "O");
         }
 
         return (
             <div className="tic-tac-toe-game">
-                <div className="game-board">
-                    <Board
-                        squares={current.squares}
-                        xIsNext={xIsNext}
-                        onSquareClick={this.handleSquareClick}
-                    />
-                </div>
+                <Board
+                    squares={currentStep.squares}
+                    currentStepSquareIndex={currentStep.moveAt}
+                    winningSquaresIndexes={winningSquaresIndexes}
+                    onSquareClick={this.handleSquareClick}
+                />
                 <div className="game-info">
                     <div>
                         {status}
                     </div>
-                    <ol>
+                    <button onClick={this.handleReverseMovesOrder}>Reverse moves display order</button>
+                    <ol reversed={reverseMovesOrder}>
                         {moves}
                     </ol>
                 </div>

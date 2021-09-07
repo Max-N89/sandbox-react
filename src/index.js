@@ -24,7 +24,7 @@ ReactDOM.render(
             [
                 reactOffDocsSectionDescription,
 
-            ].map(({title, samplesList}) => (
+            ].reverse().map(({title, samplesList}) => (
                 // TODO: fix sections titles usage as a key property
                 <Container
                     key={title}
@@ -34,7 +34,7 @@ ReactDOM.render(
                     }
                     content={
                         // TODO: fix samples titles usage as a key property
-                        samplesList.map(({title, instance}) => (
+                        samplesList.reverse().map(({title, instance}) => (
                             <Container
                                 key={title}
                                 className="sample"

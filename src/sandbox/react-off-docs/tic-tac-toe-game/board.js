@@ -1,45 +1,44 @@
-import React, {Component} from "react";
-
-import {calculateWinner} from "./supplements/calculate-winner";
+import React from "react";
 
 import {Square} from "./square";
 
-class Board extends Component{
-    renderSquare(i) {
-        const {
-            squares,
-            onSquareClick
-        } = this.props;
+function Board(props) {
+    const {
+        squares,
+        currentStepSquareIndex,
+        winningSquaresIndexes,
+        onSquareClick,
+    } = props;
 
-        return (
-            <Square
-                value={squares[i]}
-                onClick={() => onSquareClick(i)}
-            />
-        );
-    }
+    const boardContent = [];
 
-    render() {
-        return (
-            <div>
-                <div className="board-row">
-                    {this.renderSquare(0)}
-                    {this.renderSquare(1)}
-                    {this.renderSquare(2)}
-                </div>
-                <div className="board-row">
-                    {this.renderSquare(3)}
-                    {this.renderSquare(4)}
-                    {this.renderSquare(5)}
-                </div>
-                <div className="board-row">
-                    {this.renderSquare(6)}
-                    {this.renderSquare(7)}
-                    {this.renderSquare(8)}
-                </div>
+    for (let i = 0; i < squares.length; i+=3){
+        const boardRowContent = [];
+
+        for (let j = i; j < i + 3; j++){
+            boardRowContent.push(
+                <Square
+                    key={j}
+                    current={j === currentStepSquareIndex}
+                    winning={winningSquaresIndexes?.includes(j)}
+                    value={squares[j]}
+                    onClick={() => onSquareClick(j)}
+                />
+            );
+        }
+
+        boardContent.push(
+            <div key={i} className="board-row">
+                {boardRowContent}
             </div>
         );
     }
+
+    return (
+        <div className="board">
+            {boardContent}
+        </div>
+    );
 }
 
 export {Board};
