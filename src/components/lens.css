@@ -21,13 +21,17 @@
     background-color: rgba(80, 200, 230, .3);
 }
 
-.lens.contracted img.contract-expand {
+.lens.contracted .lens-plug img.contract-expand {
     position: absolute;
     top: -1px;
     right: -1px;
     z-index: 30;
     width: 2rem;
     cursor: pointer;
+}
+
+.lens.contracted .lens-focus > * {
+    width: max-content;
 }
 
 /* || expanded lens */
@@ -52,7 +56,7 @@
     background-color: rgba(80, 200, 230, .6);
 }
 
-.lens.expanded img.contract-expand {
+.lens.expanded .lens-plug img.contract-expand {
     position: fixed;
     top: 4vh;
     right: 4vh;
@@ -73,4 +77,8 @@
     border-radius: 4rem 0 0 4rem;
     background-color: white;
     overflow: auto;
+}
+.lens.expanded .lens-focus > * {
+    width: max-content;
+    margin: 0 auto;
 }
